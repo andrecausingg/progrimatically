@@ -1,0 +1,53 @@
+package com.example.progmatically;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        LinearLayout raMainlayout = new LinearLayout(this);
+        raMainlayout.setOrientation(LinearLayout.VERTICAL);
+
+        // TextView
+        LinearLayout raTextViewLayout = new LinearLayout(this);
+        TextView raTextView = new TextView(this);
+        raTextView.setText("RA Text View");
+        raTextView.setTextSize(20);
+        raTextView.setWidth(1000);
+        raTextViewLayout.addView(raTextView);
+
+        //  Edit Text
+        LinearLayout raEditTextLayout = new LinearLayout(this);
+        EditText raEditText = new EditText(this);
+        raEditText.setTextSize(20);
+        raEditText.setWidth(1000);
+        raEditText.setText("Ra Edit Text");
+        raEditTextLayout.addView(raEditText);
+
+        // Button
+        LinearLayout raButtonLayout = new LinearLayout(this);
+        Button raButton = new Button(this);
+        raButton.setText("RA Button");
+        raButton.setTextSize(16);
+        raButton.setWidth(1000);
+        raButtonLayout.addView(raButton);
+
+        //  Show Now
+        raMainlayout.addView(raTextViewLayout);
+        raMainlayout.addView(raEditTextLayout);
+        raMainlayout.addView(raButtonLayout);
+
+        LinearLayout xmllayout = (LinearLayout) findViewById(R.id.mainActivityLayout);
+        xmllayout.addView(raMainlayout);
+    }
+}
